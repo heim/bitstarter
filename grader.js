@@ -46,7 +46,7 @@ var loadChecks = function(checksfile) {
 };
 
 var checkUrl = function(url, checksfile) {
-    $ = restler.get(url);
+    $ = cheerio.load(restler.get(url));
     var checks = loadChecks(checksfile).sort();
     var out = {};
     for(var ii in checks) {
